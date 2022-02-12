@@ -19,7 +19,9 @@ public class BeanLifeCycleTest {
     @Configuration
     static class LifeCycleConfig{
 
-        @Bean(initMethod = "init", destroyMethod = "close") // destroyMethod에서 inferred가 통상 상용되는 종료 메소드 자동으로 연결해줌
+
+//        @Bean(initMethod = "init", destroyMethod = "close") // destroyMethod에서 inferred가 통상 상용되는 종료 메소드 자동으로 연결해줌
+        @Bean
         public NetworkClient networkClient(){
             NetworkClient networkClient = new NetworkClient();
             networkClient.setUrl("http://hello-spring.dev");
